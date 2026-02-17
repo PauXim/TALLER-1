@@ -7,7 +7,7 @@
     --sm:14px;
     --md:16px;
     --lg:18px;
-    
+    --card-size: 200px;
 }
 body{
     margin:0;
@@ -158,6 +158,166 @@ text-align: center;
 
 .signup-button {
     margin-top: 20px;
+}
+
+/*  grid de tamaño automático */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--card-size));
+    gap: 26px;
+    place-content: center;
+}
+
+.product-card {
+    width: var();
+}
+
+.product-card img {
+    width: var(--card-size);
+    height: var(--card-size);
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.product-info figure {
+    margin: 0;
+}
+
+.product-info figure img {
+    width: 35px;
+    height: 35px;
+}
+
+.product-info div p:nth-child(1) {
+    font-weight: bold;
+    font-size: var(--md);
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+
+.product-info div p:nth-child(2) {
+    font-size: var(--sm);
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--very-light-pink);
+}
+
+/* para que no se deforme la pagina  */
+@media (max-width:640px) {
+    :root{
+        --card-size:140px;
+    }
+}
+
+
+/* Taller #2 */
+
+/* menu-desktop */
+
+/* Lista del menu */
+.Lista{
+    border: 1px solid #C7C7C7;
+    border-radius: 8px;
+    width: 16%;
+    height: 155px;
+    padding: 15px;
+    list-style: none;
+    
+}
+
+/* cada elemento de la lista (contenedor)*/
+.Lista Li{
+  text-align: right;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+/* estilo de los elementos(texto) */
+.Lista a {
+  font-weight: 900;
+  text-decoration: none;
+  color:#000000
+}
+
+/* sign out (Contenedor) */
+.Lista li:last-child {
+  border-top: 1px solid #C7C7C7;
+  margin-top: 25px;
+  padding-top: 10px;
+}
+
+/* sign out (Estilo-Texto) */
+.Lista li:last-child a{
+    color: #000000;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+
+ /* menu-mobile */
+.menu{
+    width: 500px;
+    margin: 0 auto;
+}
+
+.Categorias{
+    list-style: none;
+}
+.Categorias Li{
+    margin-top: 10px;
+    padding: 5px; 
+
+    
+}
+.Categorias a {
+  font-weight: 900;
+  text-decoration: none;
+  color:#000000
+}
+.Categorias .titulo{
+    text-align: left;
+    font-weight: 900;
+}
+/* Linea */
+.Categorias li:last-child{
+  border-top: 1px solid #C7C7C7;
+  margin-top: 20px;
+  padding-top: 15px;
+  width: 100%
+}
+.account{
+   list-style: none;
+  
+}
+.account a{
+  font-weight: 900;
+  text-decoration: none;
+  color:#000000
+ 
+}
+.Correo{
+  color: #999999;
+  font-weight: 300;
+  margin-top: 20px;  
+}
+
+.Sign{
+    list-style: none;
+    
+}
+.Sign a{
+  font-weight: 900;
+  font-size: 14px;
+  text-decoration: none;
+  color:#000000
+  
 }
 
 
