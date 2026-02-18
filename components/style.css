@@ -178,6 +178,9 @@ text-align: center;
 
 .product-card {
     width: var();
+    width: var(--card-size);  /* Asumiendo que esto debería ser var(--card-size), como en la imagen */
+    display: flex;  /* Nuevo: Convierte la tarjeta en un contenedor flexible vertical */
+    flex-direction: column;  /* Nuevo: Apila la imagen y la info verticalmente */
 }
 
 .product-card img {
@@ -192,6 +195,7 @@ text-align: center;
     justify-content: space-between;
     align-items: center;
     margin-top: 12px;
+    margin-top: auto;
 
 }
 
@@ -224,6 +228,7 @@ text-align: center;
     font-size: var(--md);
     margin-top: 0;
     margin-bottom: 4px;
+    text-align: left;  /* Nuevo: Alinea el precio a la izquierda */
 }
 
 /* para que no se deforme la pagina  */
@@ -281,6 +286,8 @@ text-align: center;
     margin-top: 10px;
     font-size: var(--sm);
 }
+
+
 
 
 
