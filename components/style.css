@@ -160,6 +160,14 @@ text-align: center;
     margin-top: 20px;
 }
 
+
+
+/* Taller #2 */
+
+
+/* Productos-Tienda virtual */
+
+
 /*  grid de tamaño automático */
 .cards-container {
     display: grid;
@@ -184,6 +192,7 @@ text-align: center;
     justify-content: space-between;
     align-items: center;
     margin-top: 12px;
+
 }
 
 .product-info figure {
@@ -206,7 +215,15 @@ text-align: center;
     font-size: var(--sm);
     margin-top: 0;
     margin-bottom: 0;
-    color: var(--very-light-pink);
+    font-weight: 400;
+    color:#C7C7C7
+    
+}
+.product-info div p:nth-child(3) {
+    font-weight: bold;
+    font-size: var(--md);
+    margin-top: 0;
+    margin-bottom: 4px;
 }
 
 /* para que no se deforme la pagina  */
@@ -217,17 +234,20 @@ text-align: center;
 }
 
 
-/* Taller #2 */
+
+
 
 /* menu-desktop */
+
+
 
 /* Lista del menu */
 .Lista{
     border: 1px solid #C7C7C7;
     border-radius: 8px;
-    width: 16%;
-    height: 155px;
     padding: 15px;
+    max-width: 260px; /* tamaño máximo del menú - para que no se deforme */
+    width: 115px; 
     list-style: none;
     
 }
@@ -237,6 +257,7 @@ text-align: center;
   text-align: right;
   margin-top: 10px;
   padding: 5px;
+  font-size: var(--md);
 }
 
 /* estilo de los elementos(texto) */
@@ -250,7 +271,7 @@ text-align: center;
 .Lista li:last-child {
   border-top: 1px solid #C7C7C7;
   margin-top: 25px;
-  padding-top: 10px;
+  padding-top: 16px;
 }
 
 /* sign out (Estilo-Texto) */
@@ -258,68 +279,100 @@ text-align: center;
     color: #000000;
     font-weight: 400;
     margin-top: 10px;
+    font-size: var(--sm);
 }
+
 
 
  /* menu-mobile */
+
+/* contenedor principal */
+
+
 .menu{
-    width: 500px;
-    margin: 0 auto;
+    max-width: 500px;        /* ancho máximo del menú */
+    width: 100%;              /* ocupa todo el ancho disponible */
+    margin: 0 auto;           /* centra el menú horizontalmente */
+    padding: 0 16px;          /* espacio interno a los lados */
 }
+
+
+/*list de categoria */
 
 .Categorias{
-    list-style: none;
+    list-style: none;         /* elimina los puntos de la lista */
+    font-size: var(--md);
 }
-.Categorias Li{
-    margin-top: 10px;
-    padding: 5px; 
 
-    
+/* espacio interno de cada elemento*/
+.Categorias li{
+    margin-top: 10px;         /* espacio entre cada item */
+    padding: 5px;             /* espacio interno del item */
 }
+
+/* enlaces de las categorías */
 .Categorias a {
-  font-weight: 900;
-  text-decoration: none;
-  color:#000000
+  font-weight: 900;           /* negrita */
+  text-decoration: none;      /* quita subrayado */
+  color:#000000;              
 }
+
+/* título CATEGORIES */
 .Categorias .titulo{
-    text-align: left;
-    font-weight: 900;
+    text-align: left;         /* alineación del texto */
+    font-weight: 900;         /* negrita */
+    font-size: var(--md);
 }
-/* Linea */
+
+/* línea separadora antes de "My orders" */
 .Categorias li:last-child{
-  border-top: 1px solid #C7C7C7;
-  margin-top: 20px;
-  padding-top: 15px;
-  width: 100%
+  border-top: 1px solid #C7C7C7; /* línea superior */
+  margin-top: 20px;               /* espacio antes de la línea */
+  padding-top: 15px;              /* espacio entre línea y texto */
+  width: 100%;                    /* ocupa todo el ancho */
 }
+
+
+/* SECCIÓN CUENTA */
+
 .account{
-   list-style: none;
-  
+   list-style: none;          /* elimina puntitos */
+   font-size: var(--md);
+    
+
 }
+
+/* espacio interno de account */
+.account li{
+  padding: 5px;
+  margin-top: 10px;
+}
+
+/* enlace "My account" */
 .account a{
   font-weight: 900;
   text-decoration: none;
-  color:#000000
- 
+  color:#000000;
 }
+
+/* texto del correo */
 .Correo{
-  color: #999999;
-  font-weight: 300;
-  margin-top: 20px;  
+  color: #999999;            
+  font-weight: 300;           
+  margin-top: 20px;           /* separación superior */
 }
+
+
+/* SECCIÓN CERRAR SESIÓN */
 
 .Sign{
-    list-style: none;
-    
+    list-style: none;         /* elimina puntitos */
 }
+
 .Sign a{
-  font-weight: 900;
-  font-size: 14px;
-  text-decoration: none;
-  color:#000000
-  
+  font-weight: 900;           /* negrita */
+  font-size: 14px;            /* tamaño de letra */
+  text-decoration: none;      /* sin subrayado */
+  color:#000000;
+  font-size: var(--sm);
 }
-
-
-
-
