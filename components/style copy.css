@@ -1,0 +1,474 @@
+
+ /* VARIABLES GLOBALES
+   Colores, tamaños de texto y medidas reutilizables
+   para mantener consistencia en todo el diseño */
+:root{
+    --white: #FFFFFF;
+    --black:#000000;
+    --very-light-pink:#C7C7C7;
+    --text-input-field:#F7F7F7;
+    --rojo:#E5252E;
+    --sm:14px;
+    --md:16px;
+    --lg:18px;
+    --card-size: 200px;
+}
+   /* ESTILO BASE DEL DOCUMENTO
+   Quita márgenes por defecto y define la fuente globa */
+body{
+    margin:0;
+    font-family: 'Quicksand', sans-serif;   
+}
+/* CONTENEDOR PRINCIPAL DE LA VISTA
+   Centra todo el contenido vertical y horizontalmente
+   ocupando toda la altura de la pantalla */
+.login {
+ width: 100%;
+ height: 100vh;
+ display: grid;
+ place-items: center;}
+  /* CONTENEDOR DEL FORMULARIO
+   Organiza los elementos en estructura vertical
+   (título / contenido / botón) */
+
+.form-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 300px;
+}
+   /* LOGO DE LA PÁGINA
+   Definido pero oculto por defecto (normalmente móvil) */
+
+.logo {
+
+width: 150px;
+margin-bottom: 48px;
+justify-self: center;
+display: none;
+
+}
+ /* TITULO PRINCIPAL DE LA VISTA */
+
+
+.title {
+font-size: var( --lg);
+margin-bottom: 12px;
+text-align: center;
+
+}
+ /* SUBTITULO */
+
+.subtitle {
+color: var( --very-light-pink);
+font-size: var( --md);
+font-weight: 300;
+margin-top: 0;
+margin-bottom: 32px;
+text-align: center;
+}
+ /* ESTRUCTURA DEL FORMULARIO
+   Ordena los campos en columna y controla altura */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+  /* ETIQUETAS DE LOS CAMPOS (Name, Email, etc.) */
+
+.label {
+font-size: var( --sm);
+font-weight: bold;
+margin-bottom: 4px;
+}
+
+/* CAMPOS DE TEXTO */
+.input {
+background-color: var(--text-input-field);
+border: none;
+border-radius: 8px;
+height: 30px;
+font-size: var(--md);
+padding: 6px;
+margin-bottom: 12px;
+}
+
+/* BOTÓN PRINCIPAL (ESTILO GENERAL) */
+.primary-button {
+background-color: var(--rojo);
+border-radius: 8px;
+border: none;
+color: var(--white);
+width: 100%;
+cursor: pointer;
+font-size: var(--md);
+font-weight: bold;
+height: 50px;
+}
+/* 
+   ESPACIADO EXTRA PARA BOTÓN LOGIN */
+.login-button {
+margin-top: 14px;
+margin-bottom: 30px;
+}
+/* 
+ AJUSTE RESPONSIVE — MÓVIL
+   Empuja el botón hacia la parte inferior del layout */
+@media(max-width: 641px){
+    .signup-button {
+        margin-top: auto;
+    }
+}
+  /* AJUSTE RESPONSIVE — ESCRITORIO
+   Asegura altura completa del contenedor */
+@media (min-width: 640px) {
+    .form-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 300px;
+    height: 100%;
+}
+}
+
+ /* BOTÓN FIJO EN LA PARTE INFERIOR EN MÓVIL
+   Estilo tipo app móvil (siempre visible abajo) */
+@media (max-width: 641px){
+
+    .form-container{
+        height: 100vh;
+        padding-bottom: 70px; /* espacio para que el contenido no quede tapado */
+        box-sizing: border-box;
+    }
+
+    .signup-button{
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 40px);
+        max-width: 400px;
+    }
+
+}
+
+  /* Estilo del boton create*/
+.secondary-button.signup-button{
+    background-color: var(--rojo) !important;
+    color: var(--white) !important;
+    border: none !important;
+}
+
+
+ /* TEXTO INFORMATIVO SECUNDARIO */
+
+.Didnt {
+color: var( --very-light-pink);
+font-size: var( --md);
+font-weight: 300;
+margin-top: 0;
+margin-bottom: 32px;
+text-align: center;
+}
+
+/* ENLACE RESEND EN ROJO */
+.Resend {
+    color: var( --rojo);
+}
+/* CONTENEDOR DE IMAGEN */
+
+.imagen{
+    width: 110px;
+    height: 110px;
+    border-radius: 70%;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;   
+}
+.imagen img{
+     width: 70px;
+    height: 70px;
+}
+
+ /* ESPACIADO EXTRA SUPERIOR */
+.for{
+    margin-top: 30px;
+}
+
+
+  /* ENLACE "FORGOT PASSWORD" */
+.forgot-password {
+    text-align: center;
+    font-size: var(--sm);
+    color: var(--rojo);
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Boton(Sign up) */
+.secondary-button {
+    background-color: var(--white);
+    border: 1px solid var(--rojo);
+    border-radius: 8px;
+    color: var(--rojo);
+    width: 100%;
+    height: 50px;
+    font-size: var(--md);
+    font-weight: bold;
+    cursor: pointer;
+}
+  /* ESPACIADO SUPERIOR BOTÓN SIGNU */
+
+.signup-button {
+    margin-top: 20px;
+}
+
+
+
+/* Taller #2 */
+
+
+/* Productos-Tienda virtual */
+
+
+/*  grid de tamaño automático */
+
+/* CONTENEDOR DE TODAS LAS TARJETAS */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--card-size));
+    gap: 26px;
+    place-content: center;
+    grid-auto-rows: 1fr;
+}
+
+/* TARJETA INDIVIDUAL DE PRODUCTO */
+.product-card {
+    width: var();
+    width: var(--card-size); 
+    display: flex;  
+    flex-direction: column;  
+    height: 100%;
+}
+
+/* IMAGEN*/
+.product-card img {
+    width: var(--card-size);
+    height: var(--card-size);
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+/* CONTENEDOR (nombre, descripción, precio y carrito) */
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 13px;
+    height: 100%;
+
+}
+
+/*TEXTO (nombre, descripción, precio) */
+.product-info div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/*CARRITO */
+.product-info figure {
+    margin: 0;
+}
+
+.product-info figure img {
+    width: 35px;
+    height: 35px;
+}
+
+/* NOMBRE*/
+.product-info div p:nth-child(1) {
+    font-weight: bold;
+    font-size: var(--md);
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+
+/* DESCRIPCIÓN*/
+.product-info div p:nth-child(2) {
+    font-size: var(--sm);
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 400;
+    color:#C7C7C7
+    
+}
+
+/* PRECIO*/
+.product-info div p:nth-child(3) {
+    font-weight: bold;
+    font-size: var(--md);
+    margin-top: auto;
+    margin-bottom: 4px;
+    text-align: left;  /*Alinea el precio a la izquierda */
+}
+
+/* para que no se deforme la pagina- Movil */
+@media (max-width:640px) {
+    :root{
+        --card-size:140px;  /* reduce el tamaño de las tarjetas */
+    }
+}
+
+
+
+
+
+/* menu-desktop */
+
+
+
+/* Lista del menu */
+.Lista{
+    border: 1px solid #C7C7C7;
+    border-radius: 8px;
+    padding: 15px;
+    max-width: 260px; /* tamaño máximo del menú - para que no se deforme */
+    width: 115px; 
+    list-style: none;
+    
+}
+
+/* cada elemento de la lista (contenedor)*/
+.Lista Li{
+  text-align: right;
+  margin-top: 10px;
+  padding: 5px;
+  font-size: var(--md);
+}
+
+/* estilo de los elementos(texto) */
+.Lista a {
+  font-weight: 900;
+  text-decoration: none;
+  color:#000000
+}
+
+/* sign out (Contenedor) */
+.Lista li:last-child {
+  border-top: 1px solid #C7C7C7;
+  margin-top: 25px;
+  padding-top: 16px;
+}
+
+/* sign out (Estilo-Texto) */
+.Lista li:last-child a{
+    color: #000000;
+    font-weight: 400;
+    margin-top: 10px;
+    font-size: var(--sm);
+}
+
+
+
+
+
+ /* menu-mobile */
+
+/* contenedor principal */
+
+
+.menu{
+    max-width: 500px;        /* ancho máximo del menú */
+    width: 100%;              /* ocupa todo el ancho disponible */
+    margin: 0 auto;           /* centra el menú horizontalmente */
+    padding: 0 16px;          /* espacio interno a los lados */
+}
+
+
+/*list de categoria */
+
+.Categorias{
+    list-style: none;         /* elimina los puntos de la lista */
+    font-size: var(--md);
+}
+
+/* espacio interno de cada elemento*/
+.Categorias li{
+    margin-top: 10px;         /* espacio entre cada item */
+    padding: 5px;             /* espacio interno del item */
+}
+
+/* enlaces de las categorías */
+.Categorias a {
+  font-weight: 900;           /* negrita */
+  text-decoration: none;      /* quita subrayado */
+  color:#000000;              
+}
+
+/* título CATEGORIES */
+.Categorias .titulo{
+    text-align: left;         /* alineación del texto */
+    font-weight: 900;         /* negrita */
+    font-size: var(--md);
+}
+
+/* línea separadora antes de "My orders" */
+.Categorias li:last-child{
+  border-top: 1px solid #C7C7C7; /* línea superior */
+  margin-top: 20px;               /* espacio antes de la línea */
+  padding-top: 15px;              /* espacio entre línea y texto */
+  width: 100%;                    /* ocupa todo el ancho */
+}
+
+
+/* SECCIÓN CUENTA */
+
+.account{
+   list-style: none;          /* elimina puntitos */
+   font-size: var(--md);
+    
+
+}
+
+/* espacio interno de account */
+.account li{
+  padding: 5px;
+  margin-top: 10px;
+}
+
+/* enlace "My account" */
+.account a{
+  font-weight: 900;
+  text-decoration: none;
+  color:#000000;
+}
+
+/* texto del correo */
+.Correo{
+  color: #999999;            
+  font-weight: 300;           
+  margin-top: 20px;           /* separación superior */
+}
+
+
+/* SECCIÓN CERRAR SESIÓN */
+
+.Sign{
+    list-style: none;         /* elimina puntitos */
+}
+
+.Sign a{
+  font-weight: 900;           /* negrita */
+  font-size: 14px;            /* tamaño de letra */
+  text-decoration: none;      /* sin subrayado */
+  color:#000000;
+  font-size: var(--sm);
+}
